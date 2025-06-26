@@ -1,0 +1,16 @@
+
+services:
+  db:
+    image: postgres:17.4
+    container_name: note_taker_db
+    environment:
+      POSTGRES_USER: noteuser
+      POSTGRES_PASSWORD: notepassword
+      POSTGRES_DB: notedb
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
