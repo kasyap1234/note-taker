@@ -3,11 +3,13 @@ package service
 import (
 	"context"
 	"errors"
+	"note-taker/internal"
 	"note-taker/repository"
 )
 
 type NoteService struct {
-	repo *repository.Queries
+	repo  *repository.Queries
+	pexel *internal.PexelsService
 }
 
 func NewNoteService(repo *repository.Queries) *NoteService {
@@ -34,5 +36,3 @@ func (s *NoteService) CreateNote(ctx context.Context, params CreateNoteParams) (
 	}
 	return s.repo.CreateNote(ctx, dbParams)
 }
-
-

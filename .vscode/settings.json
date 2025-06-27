@@ -1,0 +1,7 @@
+{
+    "geminicodeassist.languages": [
+        "*",
+        "python",
+        "javascript"
+    ]
+}
