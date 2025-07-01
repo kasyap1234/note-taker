@@ -15,3 +15,10 @@ func (s *PexelsService) GetPictures(ctx context.Context, query string) ([]pexels
 	photos, err := pexels.GetPhotos(query)
 	return photos, err
 }
+
+func (s *PexelsService) GetPicture(ctx context.Context, query string, n int) (pexels.Photo, error) {
+	photos, err := pexels.GetPhotos(query)
+
+	photo := photos[n]
+	return photo, err
+}
